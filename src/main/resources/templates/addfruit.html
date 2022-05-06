@@ -19,7 +19,7 @@
         </header>
         <p class="display-3 mt-5">Add fruit to list</p>
         <div>
-        <form class="w-25 m-auto">
+        <form class="w-25 m-auto" th:action="@{/fruit/add-new}" method="post">
             <div class="form-group mt-3">
                 <label>Fruit</label>
                 <input type="text" class="form-control" name="fruit" placeholder="Fruit">
@@ -30,14 +30,14 @@
             </div>
             <div class="form-group mt-3">
                 <label>Quantity</label>
-                <input type="text" class="form-control" name="quantity" placeholder="Quantity">
+                <input type="number" class="form-control" name="quantity" placeholder="Quantity">
             </div>
             <div class="form-group mt-3">
                 <label for="isorganic">Organic</label>
-                <input type="checkbox" class="form-check-input" name="isOrganic" id="isorganic" value="Organic">
+                <input type="checkbox" class="form-check-input" name="isOrganic" id="isorganic">
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-success fw-bold w-100 mt-3">Mentés</button>
+                <button type="submit" class="btn btn-success fw-bold w-100 mt-3">Save</button>
             </div>
         </form>
         </div>

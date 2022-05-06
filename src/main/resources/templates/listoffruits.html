@@ -38,9 +38,9 @@
                     <td th:text="${fruit.quantity}"></td>
                     <td th:text="${fruit.isOrganic}"></td>
                     <td>
-                        <a th:href="@{/fruit/update}" class="btn btn-success w-100 mb-2">Update</a>
+                        <a th:href="@{'/fruit/update/' + ${fruit.ID}}" class="btn btn-success w-100 mb-2">Update</a>
                         <br>
-                        <button class="btn btn-danger w-100" onclick="">Delete</button>
+                        <a th:href="@{'/fruit/list/' + ${fruit.ID} + '/delete'}" class="btn btn-danger w-100">Delete</a>
                     </td>
                 </tr>
                 </tbody>

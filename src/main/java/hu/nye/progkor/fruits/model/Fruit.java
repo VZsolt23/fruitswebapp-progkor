@@ -1,10 +1,8 @@
 package hu.nye.progkor.fruits.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
 import lombok.*;
+
+import javax.persistence.Entity;
 
 @AllArgsConstructor
 @NoArgsConstructor

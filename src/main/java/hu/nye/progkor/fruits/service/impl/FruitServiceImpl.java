@@ -36,6 +36,10 @@ public class FruitServiceImpl implements FruitService {
     @Override
     public Fruit addFruit(Fruit fruit) {
         fruit.setID(getNewId());
+        if (fruit.getIsOrganic() == null) {
+            fruit.setIsOrganic(false);
+        }
+        System.out.println(fruit);
         DATA_BASE.add(fruit);
         return fruit;
     }
