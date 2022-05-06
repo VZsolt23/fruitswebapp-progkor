@@ -14,15 +14,14 @@ import lombok.*;
 @ToString
 @Entity
 public class Fruit {
-    @Id
-    @GeneratedValue
-    Long ID;
 
-    String fruit;
+    private Long ID;
 
-    String variety;
+    private String fruit;
 
-    String quantity;
+    private String variety;
 
-    Boolean isOrganic;
+    private int quantity;
+
+    private Boolean isOrganic;
 }

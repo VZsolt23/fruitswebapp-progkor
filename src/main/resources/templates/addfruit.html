@@ -8,8 +8,14 @@
     </head>
     <body class="d-flex h-100 text-center text-white" style="background-color: #063104">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="m-auto w-25">
-            <a class="nav-link text-black btn btn-lg btn-secondary fw-bold border-white bg-white m-auto mt-3 w-50" href="http://localhost:8080/listoffruits">Back</a>
+        <header class="mb-auto">
+            <div>
+                <h2 class="float-md-start mb-0">Fruits</h2>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a class="nav-link text-black btn btn-lg btn-secondary fw-bold border-white bg-white m-1" th:href="@{/fruit}">Home</a>
+                    <a class="nav-link text-black btn btn-lg btn-secondary fw-bold border-white bg-white m-1" th:href="@{/fruit/list}">List of fruits</a>
+                </nav>
+            </div>
         </header>
         <p class="display-3 mt-5">Add fruit to list</p>
         <div>

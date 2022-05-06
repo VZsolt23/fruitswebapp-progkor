@@ -7,66 +7,45 @@
         <link rel="icon" th:href="@{/img/fruits.png}">
     </head>
     <body class="d-flex h-100 text-center text-white" style="background-color: #063104">
-        <div class="container">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
             <header class="mb-auto">
                 <div>
-                    <nav class="nav nav-masthead">
-                        <a class="nav-link text-black btn btn-lg btn-secondary fw-bold border-white bg-white m-1 mt-3" th:href="@{/}">Home</a>
+                    <h2 class="float-md-start mb-0">Fruits</h2>
+                    <nav class="nav nav-masthead justify-content-center float-md-end">
+                        <a class="nav-link text-black btn btn-lg btn-secondary fw-bold border-white bg-white m-1" th:href="@{/fruit}">Home</a>
                     </nav>
                 </div>
             </header>
+        <div class="container">
             <h1 class="display-2 mt-3 mb-2">List of fruits</h1>
-            <a class="nav-link text-black btn btn-lg btn-warning fw-bold m-auto mt-3 mb-2 w-25" href="http://localhost:8080/addfruit">Add</a>
+            <a class="nav-link text-black btn btn-lg btn-warning fw-bold m-auto mt-3 mb-2 w-25" th:href="@{/fruit/add-new}">Add</a>
             <table class="table table-success table-striped mt-auto align-middle">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Fruit</th>
                     <th scope="col">Variety</th>
-                    <th scope="col">Quantity</th>
+                    <th scope="col">Quantity (kg)</th>
                     <th scope="col">Organic</th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Apple</td>
-                    <td>Golden Delicious</td>
-                    <td>25kg</td>
-                    <td>Yes</td>
+                <tr th:each="fruit: ${fruits}">
+                    <th scope="row" th:text="${fruit.ID}"></th>
+                    <td th:text="${fruit.fruit}"></td>
+                    <td th:text="${fruit.variety}"></td>
+                    <td th:text="${fruit.quantity}"></td>
+                    <td th:text="${fruit.isOrganic}"></td>
                     <td>
-                        <a href="x" class="btn btn-primary w-100 mb-2">Update</a>
-                        <br>
-                        <button class="btn btn-danger w-100" onclick="">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Apple</td>
-                    <td>Granny Smith</td>
-                    <td>40kg</td>
-                    <td>No</td>
-                    <td>
-                        <a href="x" class="btn btn-primary w-100 mb-2">Update</a>
-                        <br>
-                        <button class="btn btn-danger w-100" onclick="">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Pear</td>
-                    <td>Asian Pear</td>
-                    <td>10kg</td>
-                    <td>No</td>
-                    <td>
-                        <a href="x" class="btn btn-primary w-100 mb-2">Update</a>
+                        <a th:href="@{/fruit/update}" class="btn btn-success w-100 mb-2">Update</a>
                         <br>
                         <button class="btn btn-danger w-100" onclick="">Delete</button>
                     </td>
                 </tr>
                 </tbody>
             </table>
+        </div>
         </div>
     </body>
 </html>
