@@ -117,6 +117,7 @@
 				<configuration>
 					<excludes>
 						<exclude>hu\nye\progkor\fruits\model\**</exclude>
+						<exclude>hu\nye\progkor\fruits\config\**</exclude>
 						<exclude>hu\nye\progkor\fruits\controller\**</exclude>
 						<exclude>hu\nye\progkor\fruits\FruitsWebApplication.class</exclude>
 						<exclude>hu\nye\progkor\fruits\repository\**</exclude>

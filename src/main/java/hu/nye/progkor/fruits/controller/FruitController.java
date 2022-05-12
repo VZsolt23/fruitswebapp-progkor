@@ -44,7 +44,7 @@ public class FruitController {
                                      final @RequestParam(value = "id", required = false) Long id) {
         final Fruit fruit = fruitService.updateFruit(id, fruitUpdate);
         model.addAttribute("fruit", fruit);
-        return "update";
+        return "redirect:/fruit/list";
     }
 
     @GetMapping("/list/{id}/delete")
@@ -60,18 +60,17 @@ public class FruitController {
     }
 
     @GetMapping("/add-new")
-    public String addPage(final Model model) {
+    public String addFruitPage(final Model model) {
+        Fruit newFruit = new Fruit();
+        model.addAttribute("newFruit", newFruit);
         return "addfruit";
     }
 
-    @PostMapping("/add-new")
-    public String addFruit(final Model model, final Fruit fruit) {
+    @PostMapping("/list")
+    public String addFruit(@ModelAttribute("newFruit") Fruit fruit) {
         fruitService.addFruit(fruit);
-        final List<Fruit> fruits = fruitService.getAllFruits();
-        model.addAttribute("fruits", fruits);
-        return "listoffruits";
+        return "redirect:/fruit/list";
     }
-
     @GetMapping("/error")
     public String errorPage() {
         return "error";

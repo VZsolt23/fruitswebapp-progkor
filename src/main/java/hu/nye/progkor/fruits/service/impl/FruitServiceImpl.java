@@ -1,13 +1,13 @@
 package hu.nye.progkor.fruits.service.impl;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import hu.nye.progkor.fruits.model.Fruit;
 import hu.nye.progkor.fruits.model.exception.NotFoundException;
 import hu.nye.progkor.fruits.service.FruitService;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 @Service
 public class FruitServiceImpl implements FruitService {
@@ -39,8 +39,24 @@ public class FruitServiceImpl implements FruitService {
         if (fruit.getIsOrganic() == null) {
             fruit.setIsOrganic(false);
         }
-        System.out.println(fruit);
-        DATA_BASE.add(fruit);
+
+        boolean isExisting = false;
+        Fruit[] list = getAllFruits().toArray(new Fruit[0]);
+        Fruit existingFruitUpdate;
+        for (Fruit value : list) {
+            if (fruit.equals(value)) {
+                isExisting = true;
+                existingFruitUpdate = fruit;
+                existingFruitUpdate.setQuantity(fruit.getQuantity() + value.getQuantity());
+                updateFruit(value.getID(), existingFruitUpdate);
+                break;
+            }
+        }
+
+        if (!isExisting) {
+            DATA_BASE.add(fruit);
+        }
+
         return fruit;
     }
 
@@ -50,7 +66,12 @@ public class FruitServiceImpl implements FruitService {
         fruit.setFruit(fruitUpdate.getFruit());
         fruit.setVariety(fruitUpdate.getVariety());
         fruit.setQuantity(fruitUpdate.getQuantity());
-        fruit.setIsOrganic(fruitUpdate.getIsOrganic());
+        if (fruitUpdate.getIsOrganic() != null) {
+            fruit.setIsOrganic(fruitUpdate.getIsOrganic());
+        } else {
+            fruit.setIsOrganic(false);
+        }
+
         return fruit;
     }
 
@@ -69,6 +90,5 @@ public class FruitServiceImpl implements FruitService {
                 .mapToLong(Fruit::getID)
                 .max()
                 .orElse(0);
-
     }
 }

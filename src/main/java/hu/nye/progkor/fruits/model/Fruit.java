@@ -13,13 +13,13 @@ import javax.persistence.Entity;
 @Entity
 public class Fruit {
 
-    private Long ID;
+    @EqualsAndHashCode.Exclude private Long ID;
 
     private String fruit;
 
     private String variety;
 
-    private int quantity;
+    @EqualsAndHashCode.Exclude private int quantity;
 
     private Boolean isOrganic;
 }
