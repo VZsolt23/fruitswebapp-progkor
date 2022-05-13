@@ -1,7 +1,5 @@
 package hu.nye.progkor.fruits.model;
 
-import javax.persistence.Entity;
-
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
