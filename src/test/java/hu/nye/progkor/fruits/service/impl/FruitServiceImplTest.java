@@ -114,9 +114,4 @@ public class FruitServiceImplTest {
     // then
     assertThat(actual).isEqualTo(expectedFruit);
   }
-
-  @Test
-  void fruitServiceImplShouldAddFruitToDataBase() {
-
-  }
 }
