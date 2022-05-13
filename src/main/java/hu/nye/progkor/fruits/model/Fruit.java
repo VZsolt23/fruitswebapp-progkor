@@ -1,8 +1,13 @@
 package hu.nye.progkor.fruits.model;
 
-import lombok.*;
-
 import javax.persistence.Entity;
+
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,13 +18,13 @@ import javax.persistence.Entity;
 @Entity
 public class Fruit {
 
-    @EqualsAndHashCode.Exclude private Long ID;
+  private Long id;
 
-    private String fruit;
+  private String fruit;
 
-    private String variety;
+  private String variety;
 
-    @EqualsAndHashCode.Exclude private int quantity;
+  private int quantity;
 
-    private Boolean isOrganic;
+  private Boolean isOrganic;
 }

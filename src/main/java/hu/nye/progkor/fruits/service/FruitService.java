@@ -1,17 +1,17 @@
 package hu.nye.progkor.fruits.service;
 
-import hu.nye.progkor.fruits.model.Fruit;
-
 import java.util.List;
 
+import hu.nye.progkor.fruits.model.Fruit;
+
 public interface FruitService {
-    List<Fruit> getAllFruits();
+  List<Fruit> getAllFruits();
 
-    Fruit getFruit(Long id);
+  Fruit getFruit(Long id);
 
-    Fruit addFruit(Fruit fruit);
+  Fruit addFruit(Fruit fruit);
 
-    Fruit updateFruit(Long id, Fruit fruitUpdate);
+  Fruit updateFruit(Long id, Fruit fruitUpdate);
 
-    void deleteFruit(Long id);
+  void deleteFruit(Long id);
 }

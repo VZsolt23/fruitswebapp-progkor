@@ -32,15 +32,15 @@
                 </thead>
                 <tbody>
                 <tr th:each="fruit: ${fruits}">
-                    <th scope="row" th:text="${fruit.ID}"></th>
+                    <th scope="row" th:text="${fruit.id}"></th>
                     <td th:text="${fruit.fruit}"></td>
                     <td th:text="${fruit.variety}"></td>
                     <td th:text="${fruit.quantity}"></td>
                     <td th:text="${fruit.isOrganic}"></td>
                     <td>
-                        <a th:href="@{'/fruit/update/' + ${fruit.ID}}" class="btn btn-success w-100 mb-2">Update</a>
+                        <a th:href="@{'/fruit/update/' + ${fruit.id}}" class="btn btn-success w-100 mb-2">Update</a>
                         <br>
-                        <a th:href="@{'/fruit/list/' + ${fruit.ID} + '/delete'}" class="btn btn-danger w-100">Delete</a>
+                        <a th:href="@{'/fruit/list/' + ${fruit.id} + '/delete'}" class="btn btn-danger w-100">Delete</a>
                     </td>
                 </tr>
                 </tbody>

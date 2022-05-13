@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class FruitsWebApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(FruitsWebApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(FruitsWebApplication.class, args);
+  }
 
 }
