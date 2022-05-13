@@ -15,12 +15,11 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString
-@Entity
 public class Fruit {
 
   private Long id;
 
-  private String fruit;
+  private String crop;
 
   private String variety;
 

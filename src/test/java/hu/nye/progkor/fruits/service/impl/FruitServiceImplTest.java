@@ -11,7 +11,7 @@ import hu.nye.progkor.fruits.service.FruitService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class FruitServiceImplTest {
+class FruitServiceImplTest {
   private static final Fruit APPLE = new Fruit(1L, "Apple", "Golden delicious", 25, false);
   private static final Fruit PEAR = new Fruit(2L, "Pear", "Asian pear", 39, true);
   private static final Fruit PLUM = new Fruit(3L, "Plum", "Damson Plum", 10, false);

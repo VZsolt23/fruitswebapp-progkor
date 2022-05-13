@@ -20,6 +20,7 @@
             <h1 class="display-2 mt-3 mb-2">List of fruits</h1>
             <a class="nav-link text-black btn btn-lg btn-warning fw-bold m-auto mt-3 mb-2 w-25" th:href="@{/fruit/add-new}">Add</a>
             <table class="table table-success table-striped mt-auto align-middle">
+                <caption class="text-white">Fruits Web App by Zsolt Varga</caption>
                 <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -33,7 +34,7 @@
                 <tbody>
                 <tr th:each="fruit: ${fruits}">
                     <th scope="row" th:text="${fruit.id}"></th>
-                    <td th:text="${fruit.fruit}"></td>
+                    <td th:text="${fruit.crop}"></td>
                     <td th:text="${fruit.variety}"></td>
                     <td th:text="${fruit.quantity}"></td>
                     <td th:text="${fruit.isOrganic}"></td>

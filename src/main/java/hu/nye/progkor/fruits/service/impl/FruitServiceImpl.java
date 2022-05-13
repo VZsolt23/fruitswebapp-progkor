@@ -50,7 +50,7 @@ public class FruitServiceImpl implements FruitService {
     Fruit[] list = getAllFruits().toArray(new Fruit[0]);
     Fruit existingFruitUpdate;
     for (Fruit value : list) {
-      if (fruit.getFruit().equals(value.getFruit())
+      if (fruit.getCrop().equals(value.getCrop())
           && fruit.getVariety().equals(value.getVariety())
           && fruit.getIsOrganic().equals(value.getIsOrganic())) {
         isExisting = true;
@@ -71,7 +71,7 @@ public class FruitServiceImpl implements FruitService {
   @Override
   public Fruit updateFruit(Long id, Fruit fruitUpdate) {
     final Fruit fruit = getFruit(id);
-    fruit.setFruit(fruitUpdate.getFruit());
+    fruit.setCrop(fruitUpdate.getCrop());
     fruit.setVariety(fruitUpdate.getVariety());
     fruit.setQuantity(fruitUpdate.getQuantity());
     if (fruitUpdate.getIsOrganic() != null) {
