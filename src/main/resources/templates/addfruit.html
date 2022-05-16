@@ -22,15 +22,15 @@
         <form class="w-25 m-auto" th:action="@{/fruit/list}" method="post">
             <div class="form-group mt-3">
                 <label>Fruit</label>
-                <input type="text" class="form-control" name="crop" placeholder="Fruit">
+                <input type="text" class="form-control" name="crop" placeholder="Fruit" required>
             </div>
             <div class="form-group mt-3">
                 <label>Variety</label>
-                <input type="text" class="form-control" name="variety" placeholder="Variety">
+                <input type="text" class="form-control" name="variety" placeholder="Variety" required>
             </div>
             <div class="form-group mt-3">
                 <label>Quantity</label>
-                <input type="number" class="form-control" name="quantity" placeholder="Quantity">
+                <input type="number" class="form-control" name="quantity" placeholder="Quantity" min="0" required>
             </div>
             <div class="form-group mt-3">
                 <label for="isorganic">Organic</label>

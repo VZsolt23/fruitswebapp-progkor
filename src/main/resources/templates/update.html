@@ -17,7 +17,7 @@
                     </nav>
                 </div>
             </header>
-            <p class="display-3 mt-5">Update XY</p>
+            <p class="display-3 mt-5" th:text="'Update ' + ${fruit.crop} + ' fruit'"></p>
             <div>
                 <form method="post" th:action="@{'/fruit/update/'} + ${fruit.id}" class="w-25 m-auto">
                     <div class="form-group mt-3">
@@ -26,15 +26,15 @@
                     </div>
                     <div class="form-group mt-3">
                         <label>Fruit</label>
-                        <input type="text" class="form-control" name="crop" th:value="${fruit.crop}">
+                        <input type="text" class="form-control" name="crop" th:value="${fruit.crop}" required>
                     </div>
                     <div class="form-group mt-3">
                         <label>Variety</label>
-                        <input type="text" class="form-control" name="variety" th:value="${fruit.variety}">
+                        <input type="text" class="form-control" name="variety" th:value="${fruit.variety}" required>
                     </div>
                     <div class="form-group mt-3">
                         <label>Quantity</label>
-                        <input type="number" class="form-control" name="quantity" th:value="${fruit.quantity}">
+                        <input type="number" class="form-control" name="quantity" th:value="${fruit.quantity}" min="0" required>
                     </div>
                     <div class="form-group mt-3">
                         <label for="isorganic">Organic</label>
